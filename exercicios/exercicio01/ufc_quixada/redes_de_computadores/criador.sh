@@ -1,0 +1,30 @@
+
+#mkdir conquistas/fundamentos_da_programação
+#mkdir conquistas/matematica_computacional
+#mkdir conquistas/teoria_geral_da_administração
+#mkdir conquistas/informatica_e_organização_de_computadores
+#mkdir conquistas/metodos_e_tecnicas_de_pesquisa
+
+
+
+
+#mkdir conquistas/programação_orientada_a_objetos
+#mkdir conquistas/redes_de_computadores
+#mkdir conquistas/probabilidade_e_estatistica
+#mkdir conquistas/empreendedorismo
+#mkdir conquistas/sistemas_operacionais
+
+
+mkdir conquistas/administração_de_sistemas_operacionais_linux
+mkdir conquistas/administração_de_sistemas_operacionais_windows
+mkdir conquistas/fundamentos_de_banco_de_dados
+mkdir conquistas/internet_e_arquiteturatcpip
+
+
+mkdir conquistas/redes_de_alta_velocidade
+mkdir conquistas/redes_de_comunicação_moveis
+mkdir conquistas/gerencia_de_redes
+mkdir conquistas/gerencia_de_projetos
+
+
+
