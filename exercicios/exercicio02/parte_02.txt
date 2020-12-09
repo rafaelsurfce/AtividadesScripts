@@ -1,9 +1,9 @@
-
-#1
+# Não era grep, apenas as expressões regulares.
+#1 Aqui você está capturando todas as letras de revista.
 grep -E '[revista][revistas]' 
 
 #2
 grep -E 'letras' -i
 
-#3
+#3 IP só tem dois pontos?
 grep -E '[0-9]{3}\.[0-9]{3}\.[0-9]{3}\'
