@@ -1,0 +1,9 @@
+
+#1
+grep -E '[revista][revistas]' 
+
+#2
+grep -E 'letras' -i
+
+#3
+grep -E '[0-9]{3}\.[0-9]{3}\.[0-9]{3}\'
