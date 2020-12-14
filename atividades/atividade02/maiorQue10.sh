@@ -1,3 +1,4 @@
+# Correção: OK. 1,0 ponto. Só se acostume a colocar #!/bin/bash
 mkdir maiorque10
 
 find -size +10M -exec  mv {} maiorque10/ \;
