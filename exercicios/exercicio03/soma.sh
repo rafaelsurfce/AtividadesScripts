@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: Chegou até o terceiro comando.
 #1
 cat compras.txt
 echo " "
