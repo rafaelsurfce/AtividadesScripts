@@ -1,3 +1,4 @@
+# Correção: 1,0
 #1
 grep -v 'sshd' auth.log.1
 
