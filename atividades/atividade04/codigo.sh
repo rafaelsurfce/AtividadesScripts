@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 #1
 sed -i 's/\/bin\/python/\/usr\/bin\/python3/g' atividade04.py
