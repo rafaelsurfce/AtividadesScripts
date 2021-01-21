@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 0,0
 dir1=$1
 dir2=$2
 data=$3
