@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 0,5
 
 tipo=$1
 cor=$2
