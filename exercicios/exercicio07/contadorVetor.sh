@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 0,5
 numeros=()
 indice=0
 while [ true ]
