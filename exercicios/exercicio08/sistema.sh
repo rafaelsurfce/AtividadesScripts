@@ -40,20 +40,9 @@ echo "RESULTADO:"
 free -m
 echo ' '
 }
-
 menu()
 {
-while true
-do
-echo '1 Tempo ligado|' 
-echo '2 Ultimas Mensagens do Kernel|' 
-echo '3 Memoria Virtual|' 
-echo '4 Uso da CPU por núcleo|' 
-echo '5 Uso da CPU por processos|' 
-echo '6 Uso da Memória fisica| '
-echo ' caso deseja sair pressione CTRL + C'
-echo ' '
-read -p 'Informe o numero da opção desejada: ' opcao
+
 	if [ $opcao -eq 1 ]
 	then
 		tempo
@@ -75,9 +64,22 @@ read -p 'Informe o numero da opção desejada: ' opcao
 	else
 		echo 'Opção invalida'
 	fi 
-done
 }
-menu
+
+
+while true 
+do
+echo '1 Tempo ligado|' 
+echo '2 Ultimas Mensagens do Kernel|' 
+echo '3 Memoria Virtual|' 
+echo '4 Uso da CPU por núcleo|' 
+echo '5 Uso da CPU por processos|' 
+echo '6 Uso da Memória fisica| '
+echo ' caso deseja sair pressione CTRL + C'
+echo ' '
+read -p 'Informe o numero da opção desejada: ' opcao
+menu $opcao
+done
 
 
 
