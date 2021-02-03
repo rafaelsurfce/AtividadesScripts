@@ -42,33 +42,6 @@ echo ' '
 }
 menu()
 {
-
-	if [ $opcao -eq 1 ]
-	then
-		tempo
-	elif [ $opcao -eq 2 ]
-	then
-		ultimasMensagens
-	elif [ $opcao -eq 3 ]
-        then
-		memoriaVirtual
-	elif [ $opcao -eq 4 ]
-        then
-		usoCPU
-	elif [ $opcao -eq 5 ]
-        then
-		usoCPUProcessos
-	elif [ $opcao -eq 6 ]
-        then
-		memoriaFisica
-	else
-		echo 'Opção invalida'
-	fi 
-}
-
-
-while true 
-do
 echo '1 Tempo ligado|' 
 echo '2 Ultimas Mensagens do Kernel|' 
 echo '3 Memoria Virtual|' 
@@ -78,7 +51,34 @@ echo '6 Uso da Memória fisica| '
 echo ' caso deseja sair pressione CTRL + C'
 echo ' '
 read -p 'Informe o numero da opção desejada: ' opcao
-menu $opcao
+}
+
+
+while true 
+do
+menu
+        if [ $opcao -eq 1 ]
+        then
+                tempo
+        elif [ $opcao -eq 2 ]
+        then
+                ultimasMensagens
+        elif [ $opcao -eq 3 ]
+        then
+                memoriaVirtual
+        elif [ $opcao -eq 4 ]
+        then
+                usoCPU
+        elif [ $opcao -eq 5 ]
+        then
+                usoCPUProcessos
+        elif [ $opcao -eq 6 ]
+        then
+                memoriaFisica
+        else
+                echo 'Opção invalida'
+        fi 
+
 done
 
 
