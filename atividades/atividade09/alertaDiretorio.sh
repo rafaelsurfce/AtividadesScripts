@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 2,0. Não captura os nomes.
 
 
 tempo=$1
