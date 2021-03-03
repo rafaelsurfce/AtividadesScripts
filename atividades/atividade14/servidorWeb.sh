@@ -12,7 +12,7 @@ aws ec2 authorize-security-group-ingress --group-id $grupoSecurity --protocol tc
 
 
 echo "Criando servidor..."
-idInstancia=$(aws ec2 run-instances --image-id $imagem --instance-type "t2.micro" --security-group-ids $grupoSecurity --subnet $subnetId --key-name $chave --query "Instances[0].InstanceId" --output text)
+idInstancia=$(aws ec2 run-instances --image-id $imagem --instance-type "t2.micro" --security-group-ids $grupoSecurity --subnet $subnetId --key-name $chave --user-data file://web.sh --query "Instances[0].InstanceId" --output text)
 ip=$(aws ec2 describe-instances --instance-id $idInstancia --query "Reservations[0].Instances[].PublicIpAddress" --output text)  
 
 echo "Acesse: http://"$ip"/"
