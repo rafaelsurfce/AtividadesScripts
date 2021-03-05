@@ -1,4 +1,5 @@
 #!/bin/bash
+# Não funciona, diz o que é para ser veito, mas não faz. 
 cont=1
 ip=null
 nome=null
