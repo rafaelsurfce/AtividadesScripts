@@ -11,30 +11,28 @@ do
 	printf "<h1>""---------------------------------------------------""</h1>" > /usr/local/bin/estado.txt
 	printf " \n" >> /usr/local/bin/estado.txt
 	printf "<h1>""Estado da maquina:\n""</h1>" >> /usr/local/bin/estado.txt
-	printf "<h3>"+"Horario e Data:\n""</h3>" >> /usr/local/bin/estado.txt
-	printf "<h4>"
-	date '+%H:%M:%S %d-%m-%Y' >> estado.txt
-	printf "</h4>"
+	printf "<h3>""Horario e Data:\n""</h3>" >> /usr/local/bin/estado.txt
+	printf "<h6>" >> /usr/local/bin/estado.txt
+	date '+%H:%M:%S %d-%m-%Y' >> /usr/local/bin/estado.txt
+	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf "<h3>""Tempo em que a maquina esta ativa:\n""</h3>" >> /usr/local/bin/estado.txt
-	printf "<h4>"
-	uptime -s >> estado.txt
-	printf "</h4>"
+	printf "<h6>" >> /usr/local/bin/estado.txt
+	uptime -s >> /usr/local/bin/estado.txt
+	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf "<h3>""Carga média do sistema: \n""</h3>" >> /usr/local/bin/estado.txt
-	printf "<h4>"
-	uptime | grep 'load avarages.*' >> estado.txt
-	printf "</h4>"
+	printf "<h6>" >> /usr/local/bin/estado.txt
+	uptime | grep 'load average.*' >> estado.txt
+	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf "<h3>""Quantidade de memoria livre e ocupada: \n""</h3>" >> /usr/local/bin/estado.txt
-	printf "<h4>"
-	df -h >> estado.txt
-	printf "</h4>"
+	printf "<h6>" >> /usr/local/bin/estado.txt
+	df -h >> /usr/local/bin/estado.txt
+	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf " \n" >> /usr/local/bin/estado.txt
 	printf "<h1>""---------------------------------------------------""</h1>" >> /usr/local/bin/estado.txt
 
 	printf "<html>" > /var/www/html/index.html
 	printf "<body>" >> /var/www/html/index.html
-	
 	cat /usr/local/bin/estado.txt >> /var/www/html/index.html
-	#printf "</h3>" >> /var/www/html/index.html
 	printf "</body>" >> /var/www/html/index.html
 	printf "</html>" >> /var/www/html/index.html
 	sleep 5
