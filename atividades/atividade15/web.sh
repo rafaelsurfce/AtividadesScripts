@@ -17,16 +17,20 @@ do
 	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf "<h3>""Tempo em que a maquina esta ativa:\n""</h3>" >> /usr/local/bin/estado.txt
 	printf "<h6>" >> /usr/local/bin/estado.txt
-	uptime -s >> /usr/local/bin/estado.txt
+	uptime -p >> /usr/local/bin/estado.txt
 	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf "<h3>""Carga média do sistema: \n""</h3>" >> /usr/local/bin/estado.txt
 	printf "<h6>" >> /usr/local/bin/estado.txt
-	uptime | grep 'load average.*' >> estado.txt
+ 	uptime | awk '{ printf $7 " " $8 " " $9 " " $10 " " $11 "\n"}' >> /usr/local/bin/estado.txt
 	printf "</h6>" >> /usr/local/bin/estado.txt
 	printf "<h3>""Quantidade de memoria livre e ocupada: \n""</h3>" >> /usr/local/bin/estado.txt
 	printf "<h6>" >> /usr/local/bin/estado.txt
-	df -h >> /usr/local/bin/estado.txt
+	free | grep Mem | awk '{ printf "Ocupado: %d, Disponivel: %d\n", $3, $4 }'>> /usr/local/bin/estado.txt
 	printf "</h6>" >> /usr/local/bin/estado.txt
+	printf "<h3>""Quantidades de Bytes e enviados atráves  da interface eth0""</h3>" >> /usr/local/bin/estado.txt
+	printf "<h6>""\n" >> /usr/local/bin/estado.txt
+	grep  'eth0' /proc/net/dev | awk '{ printf "Recebidos: %d, Transmitidos: %d\n", $2, $10 }' >> /usr/local/bin/estado.txt
+	printf "</h6>""\n" >> /usr/local/bin/estado.txt
 	printf " \n" >> /usr/local/bin/estado.txt
 	printf "<h1>""---------------------------------------------------""</h1>" >> /usr/local/bin/estado.txt
 
