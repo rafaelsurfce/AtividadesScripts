@@ -15,6 +15,8 @@ echo "Criando servidor de monitoramento..."
 idInstancia=$(aws ec2 run-instances --image-id $imagem --instance-type "t2.micro" --security-group-ids $grupoSecurity --subnet $subnetId --key-name $chave --user-data file://web.sh --query "Instances[0].InstanceId" --output text)
 ip=$(aws ec2 describe-instances --instance-id $idInstancia --query "Reservations[0].Instances[].PublicIpAddress" --output text)  
 
+# Aprenda como verificar o estado da instância e aguardar até ele indicar que a mesma inicializou.
+
 echo "Acesse: http://"$ip"/"
 
 
