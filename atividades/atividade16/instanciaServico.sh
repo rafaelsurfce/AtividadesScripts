@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 imagem=ami-03d315ad33b9d49c4 
 grupoSecurity=$(aws ec2 create-security-group --group-name "atividade16" --description "Atividade16"  --output text)
