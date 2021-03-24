@@ -31,7 +31,7 @@ systemctl restart mysql.service
 
 mysql<<FIM
 CREATE DATABASE scripts;
-CREATE USER '$usuario'@'%' IDENTIFIED BY $senha;
+CREATE USER '$usuario'@'%' IDENTIFIED BY '$senha';
 GRANT ALL PRIVILEGES ON scripts.* TO '$usuario'@'%';
 FIM
 
@@ -66,12 +66,13 @@ apt-get -y install mysql-client
 echo "[client]" > /root/.my.cnf
 echo "user="$usuario >> /root/.my.cnf
 echo "password="$senha >> /root/.my.cnf
-mysql -u $usuario scripts -h $ip1 <<MIAU
-CREAT TABLE teste (atividade INT);
+mysql -u $usuario -p$senha -h $ip1 <<MIAU
+USE scripts;
+CREATE TABLE teste ( atividade INT );
 MIAU
 EOF
 chmod +x client.sh
-
+sleep 10
 #Criando maquina de cliente
 echo "Criando servidor de Aplicação..."
 idInstancia2=$(aws ec2 run-instances --image-id $imagem --instance-type "t2.micro" --security-group-ids $grupoSecurity --subnet $subnetId --key-name $chave --user-data file://client.sh --query "Instances[0].InstanceId" --output text)
