@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: OK. 1,0.
 
 #Declaração de variaveis e parametros
 ipPublico=$(wget -qO- https://ipecho.net/plain)
